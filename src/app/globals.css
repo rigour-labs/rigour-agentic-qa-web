@@ -1,0 +1,245 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rigour-navy: #1b2a4a;
+  --color-rigour-blue: #3b82f6;
+  --color-rigour-green: #16a34a;
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #a1a1a6;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #09090b;
+  --color-red-50: #fef2f2;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+  --color-red-900: #7f1d1d;
+  --color-red-950: #4c0519;
+  --color-amber-50: #fffbeb;
+  --color-amber-100: #fef3c7;
+  --color-amber-200: #fde68a;
+  --color-amber-300: #fcd34d;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-amber-700: #b45309;
+  --color-amber-800: #92400e;
+  --color-amber-900: #78350f;
+  --color-amber-950: #451a03;
+  --color-lime-50: #f7fee7;
+  --color-lime-100: #ecfdf5;
+  --color-lime-200: #d1fae5;
+  --color-lime-300: #a7f3d0;
+  --color-lime-400: #6ee7b7;
+  --color-lime-500: #34d399;
+  --color-lime-600: #10b981;
+  --color-lime-700: #059669;
+  --color-lime-800: #047857;
+  --color-lime-900: #065f46;
+  --color-lime-950: #022c22;
+  --color-emerald-50: #f0fdf4;
+  --color-emerald-100: #dcfce7;
+  --color-emerald-200: #bbf7d0;
+  --color-emerald-300: #86efac;
+  --color-emerald-400: #4ade80;
+  --color-emerald-500: #22c55e;
+  --color-emerald-600: #16a34a;
+  --color-emerald-700: #15803d;
+  --color-emerald-800: #166534;
+  --color-emerald-900: #145231;
+  --color-emerald-950: #052e16;
+}
+
+@layer base {
+  * {
+    @apply border-slate-200 dark:border-slate-800;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50;
+  }
+
+  h1 {
+    @apply text-3xl font-bold;
+  }
+
+  h2 {
+    @apply text-2xl font-bold;
+  }
+
+  h3 {
+    @apply text-xl font-semibold;
+  }
+}
+
+@layer components {
+  /* Base button — expanded inline, no @apply self-reference */
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200 bg-rigour-blue text-white;
+  }
+  .btn-primary:hover {
+    @apply bg-blue-600;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200 bg-slate-200 text-slate-900;
+  }
+  .btn-secondary:hover {
+    @apply bg-slate-300;
+  }
+  @media (prefers-color-scheme: dark) {
+    .btn-secondary {
+      @apply bg-slate-800 text-slate-50;
+    }
+    .btn-secondary:hover {
+      @apply bg-slate-700;
+    }
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200 bg-transparent text-slate-900;
+  }
+  .btn-ghost:hover {
+    @apply bg-slate-100;
+  }
+  @media (prefers-color-scheme: dark) {
+    .btn-ghost {
+      @apply text-slate-50;
+    }
+    .btn-ghost:hover {
+      @apply bg-slate-800;
+    }
+  }
+
+  .btn-danger {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200 bg-red-500 text-white;
+  }
+  .btn-danger:hover {
+    @apply bg-red-600;
+  }
+
+  .btn-success {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200 bg-rigour-green text-white;
+  }
+  .btn-success:hover {
+    @apply bg-green-700;
+  }
+
+  .card {
+    @apply bg-white border border-slate-200 rounded-lg p-6;
+  }
+  @media (prefers-color-scheme: dark) {
+    .card {
+      @apply bg-slate-900 border-slate-800;
+    }
+  }
+
+  .input {
+    @apply w-full px-3 py-2 border border-slate-300 rounded-lg bg-white text-slate-900 placeholder-slate-500;
+  }
+  .input:focus {
+    @apply outline-none ring-2 ring-rigour-blue border-transparent;
+  }
+  @media (prefers-color-scheme: dark) {
+    .input {
+      @apply border-slate-700 bg-slate-900 text-slate-50 placeholder-slate-400;
+    }
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-success {
+    @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-emerald-100 text-rigour-green;
+  }
+
+  .badge-danger {
+    @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-500;
+  }
+
+  .badge-warning {
+    @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-500;
+  }
+
+  .badge-info {
+    @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-rigour-blue;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-3 px-4 py-2 rounded-lg text-slate-700 transition-colors;
+  }
+  .nav-link:hover {
+    @apply bg-slate-100;
+  }
+  @media (prefers-color-scheme: dark) {
+    .nav-link {
+      @apply text-slate-300;
+    }
+    .nav-link:hover {
+      @apply bg-slate-800;
+    }
+  }
+
+  .nav-link.active {
+    @apply bg-blue-50 text-rigour-blue font-semibold;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-400 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-500;
+}

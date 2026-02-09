@@ -1,0 +1,10 @@
+# Rigour QA Web — Code Owners
+#
+# Global owner for all files
+* @rigour-labs/web
+
+# API routes owned by both web and core teams
+/src/app/api/ @rigour-labs/web @rigour-labs/core
+
+# Component files owned by web team
+/src/components/ @rigour-labs/web
